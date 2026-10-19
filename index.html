@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="id">
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070C0A">
+  <meta name="description" content="GrowMind — platform perencanaan trading. Trading dengan rencana, bukan perasaan.">
+  <title>GrowMind — Trading dengan rencana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+  <div class="ambient" aria-hidden="true">
+   <div class="orb one"></div>
+   <div class="orb two"></div>
+   <div class="orb three"></div>
+   <div class="grid-glow"></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <header class="nav-shell">
+   <nav class="nav wrap" id="navbar" aria-label="Navigasi utama">
+    <a class="brand" href="#home" aria-label="GrowMind beranda"><span class="brand-mark">
+      <svg viewBox="0 0 24 24" class="icon">
+       <path d="M4 17 9 12l3 3 8-9" /><path d="M14 6h6v6" />
+      </svg>
+     </span>growmind<span style="color:var(--accent)">.</span></a>
+    <div class="nav-links" id="navLinks">
+     <a href="#fitur">Fitur</a><a href="#modules" data-tab-link="compound">Kalkulator</a><a href="#modules" data-tab-link="plan">Plan Builder</a><a href="#modules" data-tab-link="journal">Jurnal</a><a href="#modules" data-tab-link="dashboard">Dashboard</a><a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-actions">
+     <button class="theme-btn" id="themeToggle" aria-label="Ganti tema" title="Ganti tema">
+      <svg class="icon" viewBox="0 0 24 24">
+       <circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" />
+      </svg>
+     </button>
+     <a class="btn primary small nav-cta" href="#modules" data-tab-link="plan">Mulai menyusun <span>↗</span></a>
+     <button class="menu-btn" id="menuToggle" aria-label="Buka navigasi" aria-expanded="false">
+      <svg class="icon" viewBox="0 0 24 24">
+       <path d="M4 7h16M4 12h16M4 17h16" />
+      </svg>
+     </button>
+    </div>
+   </nav>
+  </header>
+  <main id="home">
+   <section class="hero">
+    <div class="wrap hero-grid">
+     <div>
+      <div class="eyebrow">Ruang kerja trader yang lebih sadar</div>
+      <h1>Trading dengan <em>rencana,</em>
+       <br>
+       bukan perasaan.</h1>
+      <p class="hero-copy">Bangun proses trading yang bisa kamu jelaskan, ukur, dan evaluasi. Semua alat penting ada di satu ruang kerja yang tenang.</p>
+      <div class="hero-actions">
+       <a class="btn primary" href="#modules" data-tab-link="plan">Susun trading plan <span>↗</span></a><a class="btn" href="#fitur">Jelajahi fitur <span>↓</span></a>
+      </div>
+      <div class="micro-proof">
+       <span class="live-dot"></span><span>Privat di perangkatmu · Tanpa akun · Tanpa janji profit</span>
+      </div>
+     </div>
+     <div class="visual-stage" id="visualStage">
+      <div class="glass equity-card tilt">
+       <div class="card-top">
+        <div>
+         <div class="mono">Simulasi ekuitas</div>
+         <div class="metric-big">Rp12.840.000</div>
+         <div class="positive" style="font-size:12px">
+          +8,4% <span style="color:var(--muted)">· ilustrasi</span>
+         </div>
+        </div>
+        <span class="pill">30 periode</span>
+       </div>
+       <svg class="equity-svg" viewBox="0 0 480 140" role="img" aria-label="Ilustrasi kurva ekuitas naik bertahap">
+        <defs>
+         <linearGradient id="areaFill" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0" stop-color="#5FD3A4" stop-opacity=".25" /><stop offset="1" stop-color="#5FD3A4" stop-opacity="0" />
+         </linearGradient>
+        </defs>
+        <path d="M0 112 C30 108 32 90 62 98 S98 82 120 91 S150 55 180 73 S214 44 238 62 S275 35 300 47 S335 22 360 39 S390 20 415 28 S450 8 480 12 L480 140 L0 140Z" fill="url(#areaFill)" /><path class="equity-path" d="M0 112 C30 108 32 90 62 98 S98 82 120 91 S150 55 180 73 S214 44 238 62 S275 35 300 47 S335 22 360 39 S390 20 415 28 S450 8 480 12" />
+        <circle cx="480" cy="12" r="4" fill="var(--accent)">
+         <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" />
+        </circle>
+       </svg>
+       <div class="chart-legend">
+        <span><i class="legend-dot"></i>Ekuitas simulasi</span><span>Data ilustratif, bukan hasil nyata</span>
+       </div>
+      </div>
+      <div class="glass float-card win">
+       <div class="float-line">
+        <div class="ring">
+         <span>68%</span>
+        </div>
+        <div>
+         <strong>Win rate</strong><small>Ilustrasi jurnal</small>
+        </div>
+       </div>
+      </div>
+      <div class="glass float-card risk">
+       <div class="mono">Risiko per trade</div>
+       <strong>0,5%</strong>
+       <div class="risk-track">
+        <span></span>
+       </div>
+       <small>Terukur sebelum entry</small>
+      </div>
+      <div class="glass float-card compound">
+       <div class="mono">Kebiasaan kecil</div>
+       <strong>+1 proses</strong><small>Lebih baik dari kemarin</small>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="wrap reveal" aria-label="Prinsip GrowMind">
+    <div class="glass trust-strip">
+     <div class="trust-item">
+      <span class="trust-number" data-count="4">0</span><span class="trust-label">Alat dalam satu workspace</span>
+     </div>
+     <div class="trust-item">
+      <span class="trust-number" data-count="100" data-suffix="%">0</span><span class="trust-label">Kendali data di browser</span>
+     </div>
+     <div class="trust-item">
+      <span class="trust-number" data-count="0">0</span><span class="trust-label">Janji hasil instan</span>
+     </div>
+     <div class="trust-item">
+      <span class="trust-number">01</span><span class="trust-label">Proses yang kamu bangun</span>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="fitur">
+    <div class="wrap">
+     <div class="section-head reveal">
+      <div>
+       <div class="eyebrow">Satu ruang, proses lengkap</div>
+       <h2>Alat yang membantu
+        <br>
+        <em class="serif" style="color:var(--accent)">berpikir jernih.</em></h2>
+      </div>
+      <p>Bukan sinyal beli atau jual. GrowMind membantumu merapikan keputusan, mengukur risiko, lalu belajar dari catatan sendiri.</p>
+     </div>
+     <div class="feature-grid">
+      <div class="glass feature-card reveal" data-go="plan">
+       <span class="arrow">↗</span>
+       <div class="feature-icon">
+        <svg class="icon" viewBox="0 0 24 24">
+         <path d="M7 3h8l4 4v14H7z" /><path d="M15 3v5h4M10 13h6M10 17h6" />
+        </svg>
+       </div>
+       <h3>Trading Plan</h3>
+       <p>Tuangkan aturan modal, risiko, setup, dan disiplin menjadi panduan pribadi.</p>
+      </div>
+      <div class="glass feature-card reveal" data-go="compound">
+       <span class="arrow">↗</span>
+       <div class="feature-icon">
+        <svg class="icon" viewBox="0 0 24 24">
+         <path d="M3 17 9 11l4 4 8-9" /><path d="M15 6h6v6" />
+        </svg>
+       </div>
+       <h3>Compounding</h3>
+       <p>Simulasikan pertumbuhan, top-up, dan biaya tanpa menganggap hasil sebagai kepastian.</p>
+      </div>
+      <div class="glass feature-card reveal" data-go="position">
+       <span class="arrow">↗</span>
+       <div class="feature-icon">
+        <svg class="icon" viewBox="0 0 24 24">
+         <circle cx="12" cy="12" r="9" /><path d="M12 7v10M7 12h10" />
+        </svg>
+       </div>
+       <h3>Position Size</h3>
+       <p>Hitung risiko nominal, ukuran posisi, dan rasio potensi reward terhadap risiko.</p>
+      </div>
+      <div class="glass feature-card reveal" data-go="journal">
+       <span class="arrow">↗</span>
+       <div class="feature-icon">
+        <svg class="icon" viewBox="0 0 24 24">
+         <path d="M4 4h16v16H4zM8 8h8M8 12h8M8 16h4" />
+        </svg>
+       </div>
+       <h3>Jurnal Trading</h3>
+       <p>Catat hasil dan emosi, cari pola, serta evaluasi keputusan tanpa mengandalkan ingatan.</p>
+      </div>
+      <div class="glass feature-card reveal" data-go="dashboard">
+       <span class="arrow">↗</span>
+       <div class="feature-icon">
+        <svg class="icon" viewBox="0 0 24 24">
+         <path d="M3 3v18h18" /><path d="m7 14 4-4 3 3 6-7" />
+        </svg>
+       </div>
+       <h3>Dashboard</h3>
+       <p>Ringkas win rate, profit factor, expectancy, dan drawdown dari jurnalmu.</p>
+      </div>
+      <div class="glass feature-card reveal" data-go="target">
+       <span class="arrow">↗</span>
+       <div class="feature-icon">
+        <svg class="icon" viewBox="0 0 24 24">
+         <circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><circle cx="12" cy="12" r="1" />
+        </svg>
+       </div>
+       <h3>Target Planner</h3>
+       <p>Ubah target menjadi angka yang bisa dipantau—bukan tekanan untuk memaksa entry.</p>
+      </div>
+      <div class="glass feature-card reveal" data-go="checklist">
+       <span class="arrow">↗</span>
+       <div class="feature-icon">
+        <svg class="icon" viewBox="0 0 24 24">
+         <path d="m5 12 4 4L19 6" /><path d="M20 12v7H4V5h11" />
+        </svg>
+       </div>
+       <h3>Checklist Pra-Trade</h3>
+       <p>Pastikan kondisi, setup, dan batas risiko sesuai aturan sebelum membuka posisi.</p>
+      </div>
+      <div class="glass feature-card reveal" data-go="data">
+       <span class="arrow">↗</span>
+       <div class="feature-icon">
+        <svg class="icon" viewBox="0 0 24 24">
+         <path d="M12 3v12m-5-5 5 5 5-5" /><path d="M5 17v4h14v-4" />
+        </svg>
+       </div>
+       <h3>Data milikmu</h3>
+       <p>Ekspor, impor, dan kelola catatanmu. Data tersimpan lokal di browser ini.</p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="modules">
+    <div class="wrap">
+     <div class="section-head reveal">
+      <div>
+       <div class="eyebrow">Workspace interaktif</div>
+       <h2>Rencana bertemu
+        <br>
+        <em style="color:var(--accent)">kenyataan.</em></h2>
+      </div>
+      <p>Isi data sendiri untuk mendapatkan perhitungan yang relevan. Contoh dan hasil simulasi tidak menjamin performa mendatang.</p>
+     </div>
+     <div class="glass module-shell reveal">
+      <div class="module-tabs" role="tablist" aria-label="Pilih modul">
+       <button class="tab active" role="tab" aria-selected="true" data-tab="plan">Plan Builder</button>
+       <button class="tab" role="tab" aria-selected="false" data-tab="compound">Compounding</button>
+       <button class="tab" role="tab" aria-selected="false" data-tab="position">Position Size</button>
+       <button class="tab" role="tab" aria-selected="false" data-tab="journal">Jurnal</button>
+       <button class="tab" role="tab" aria-selected="false" data-tab="dashboard">Dashboard</button>
+       <button class="tab" role="tab" aria-selected="false" data-tab="target">Target Planner</button>
+       <button class="tab" role="tab" aria-selected="false" data-tab="checklist">Checklist</button>
+       <button class="tab" role="tab" aria-selected="false" data-tab="data">Data</button>
+      </div>
+      <div id="moduleContent" class="module-content" role="tabpanel"></div>
+     </div>
+    </div>
+   </section>
+   <section class="section">
+    <div class="wrap">
+     <div class="section-head reveal">
+      <div>
+       <div class="eyebrow">Dibangun untuk konsistensi</div>
+       <h2>Proses sederhana.
+        <br>
+        <em style="color:var(--accent)">Evaluasi nyata.</em></h2>
+      </div>
+      <p>Tujuannya bukan menghilangkan risiko, melainkan membuat keputusanmu lebih sadar dan dapat ditinjau kembali.</p>
+     </div>
+     <div class="steps-grid">
+      <article class="glass step-card reveal">
+       <div class="outline-num">01</div>
+       <h3>Tetapkan aturan</h3>
+       <p>Tentukan batas risiko, setup yang valid, dan kapan kamu tidak akan trading.</p>
+      </article>
+      <article class="glass step-card reveal">
+       <div class="outline-num">02</div>
+       <h3>Catat tanpa menghakimi</h3>
+       <p>Masukkan hasil, alasan entry, dan kondisi emosional. Data jujur lebih berguna daripada catatan sempurna.</p>
+      </article>
+      <article class="glass step-card reveal">
+       <div class="outline-num">03</div>
+       <h3>Tinjau lalu perbaiki</h3>
+       <p>Gunakan statistik sebagai bahan evaluasi, bukan alasan untuk menaikkan risiko secara impulsif.</p>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="faq">
+    <div class="wrap faq-grid">
+     <div class="reveal">
+      <div class="eyebrow">Pertanyaan umum</div>
+      <h2 class="serif" style="font-size:clamp(2.8rem,5vw,4.5rem);line-height:.98;margin:18px 0">Jelas sejak
+       <br>
+       <em style="color:var(--accent)">awal.</em></h2>
+      <p style="color:var(--muted);font-size:13px">Transparansi adalah bagian dari manajemen risiko.</p>
+     </div>
+     <div class="faq-list reveal">
+      <div class="glass faq-item">
+       <button class="faq-q" aria-expanded="false">Apakah GrowMind memberikan sinyal trading?<span class="faq-toggle">+</span></button>
+       <div class="faq-a">Tidak. GrowMind adalah alat untuk menyusun rencana, mencatat transaksi, dan mengevaluasi proses. Tidak ada sinyal beli atau jual.</div>
+      </div>
+      <div class="glass faq-item">
+       <button class="faq-q" aria-expanded="false">Apakah data saya diunggah ke server?<span class="faq-toggle">+</span></button>
+       <div class="faq-a">Tidak oleh aplikasi ini. Data disimpan di localStorage browser pada perangkat yang kamu gunakan. Menghapus data browser dapat menghapus catatan; gunakan ekspor JSON untuk cadangan.</div>
+      </div>
+      <div class="glass faq-item">
+       <button class="faq-q" aria-expanded="false">Apakah simulasi compounding realistis?<span class="faq-toggle">+</span></button>
+       <div class="faq-a">Simulasi menggunakan asumsi return tetap per periode, sehingga tidak mencerminkan volatilitas, kerugian beruntun, slippage, likuiditas, atau perubahan kondisi pasar. Angka adalah ilustrasi matematis.</div>
+      </div>
+      <div class="glass faq-item">
+       <button class="faq-q" aria-expanded="false">Apakah GrowMind menjamin profit?<span class="faq-toggle">+</span></button>
+       <div class="faq-a">Sama sekali tidak. Perencanaan dan pencatatan tidak menghilangkan risiko kerugian, dan hasil masa lalu tidak menjamin hasil masa depan.</div>
+      </div>
+      <div class="glass faq-item">
+       <button class="faq-q" aria-expanded="false">Bagaimana cara mencadangkan data?<span class="faq-toggle">+</span></button>
+       <div class="faq-a">Buka tab Data, pilih Ekspor JSON, lalu simpan file di tempat aman. Untuk memulihkan, gunakan Impor JSON dari perangkat yang sama atau browser lain.</div>
+      </div>
+     </div>
+    </div>
+    <div class="wrap">
+     <div class="disclaimer">
+      <strong style="color:var(--gold)">Catatan risiko.</strong> GrowMind hanya alat bantu pencatatan dan simulasi, bukan nasihat keuangan, rekomendasi investasi, atau ajakan bertransaksi. Trading memiliki risiko tinggi dan kamu dapat kehilangan sebagian atau seluruh modal. Selalu lakukan riset mandiri dan gunakan dana yang sanggup kamu tanggung risikonya.
+     </div>
+    </div>
+   </section>
+   <section class="closing">
+    <div class="wrap">
+     <div class="glass closing-card reveal">
+      <div class="eyebrow" style="justify-content:center">Mulai dari hal yang bisa kamu kendalikan</div>
+      <h2>Rencana yang baik memberi ruang untuk <em style="color:var(--accent)">berpikir.</em></h2>
+      <p>Susun aturanmu. Catat keputusanmu. Evaluasi prosesnya—satu trade pada satu waktu.</p>
+      <a href="#modules" data-tab-link="plan" class="btn primary">Mulai dengan trading plan <span>↗</span></a>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="wrap footer">
+   <a class="brand" href="#home"><span class="brand-mark">
+     <svg viewBox="0 0 24 24" class="icon">
+      <path d="M4 17 9 12l3 3 8-9" /><path d="M14 6h6v6" />
+     </svg>
+    </span>growmind<span style="color:var(--accent)">.</span></a><span>© <span id="year"></span> GrowMind. Dibuat untuk proses yang lebih sadar.</span>
+   <div class="footer-links">
+    <a href="#fitur">Fitur</a><a href="#faq">Risiko</a><a href="#modules" data-tab-link="data">Kelola data</a>
+   </div>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js" defer></script>
+ </body>
+</html>
